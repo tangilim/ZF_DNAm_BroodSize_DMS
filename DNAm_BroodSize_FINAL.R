@@ -10,8 +10,6 @@ date: "30/03/2025"
 
 #bioinformatics pipeline from raw sequencing data to .cov.gz methylation files can be found in https://zenodo.org/records/12074859
 
-
-
 #load packages
 library(data.table)
 library(methylKit)
@@ -286,8 +284,9 @@ dev.off()
 
 #load file containing only DMS
 #load file containing annotation of all CpG sites 
-zf_anot<- readRDS("ZF_Annotation_All_cpGs.rds")
+zf_anot<- readRDS("ZF_Annotation_All.rds")
 
+#ZF_Annotation_All.rds can be found in https://datadryad.org/dataset/doi:10.5061/dryad.wm37pvmw8
 
 #merge the two by position
 anot_all<- merge(significant, zf_anot, by="Pos")
